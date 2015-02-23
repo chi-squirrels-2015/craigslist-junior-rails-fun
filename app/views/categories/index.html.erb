@@ -1,0 +1,11 @@
+<h2>Categories</h2>
+<table class="table table-striped table-hover container">
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category_path(category) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

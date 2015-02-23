@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get "/" => 'categories#index'
+
+  resources :sessions, only: [:create, :new, :destroy]
+  resources :users, only: [:create, :new, :edit, :show]
+
+  resources :categories, only: [:index, :show] do
+    resources :posts
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
