@@ -11,7 +11,6 @@ class PostsController < ApplicationController
     # post.user = current_user
     post.save
     redirect_to "/categories/#{params[:category_id]}"
-
   end
 
   def show
