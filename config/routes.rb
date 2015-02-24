@@ -5,8 +5,24 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :edit, :show]
 
   resources :categories, only: [:index, :show] do
-    resources :posts
+    # resources :posts
   end
+
+  get "/categories/:category_id/posts" => 'posts#index', as: :category_posts
+
+  post "/categories/:category_id/posts" => 'posts#create'
+
+  get "/categories/:category_id/posts/new" => 'posts#new', as: :new_category_post
+
+  get "/categories/:category_id/posts/:id/edit" => 'posts#new', as: :edit_category_post
+
+  get "/categories/:category_id/posts/:id" => 'posts#show', as: :category_post
+
+  patch "/categories/:category_id/posts/:id" => 'posts#update'
+
+  put "/categories/:category_id/posts/:id" => 'posts#update'
+
+  delete "/categories/:category_id/posts/:id" => 'posts#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
