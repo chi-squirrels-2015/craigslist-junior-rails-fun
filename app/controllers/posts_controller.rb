@@ -20,6 +20,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+    @category = @post.category
+  end
+
+  def update
+    @post.update(params[:post][:title])
+    @post.update(params[:post][:body])
+    puts params
+    redirect_to "/categories/#{params[:category_id]}"
   end
 
   def destroy

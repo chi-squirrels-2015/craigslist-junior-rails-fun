@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get "/categories/:category_id/posts/new" => 'posts#new', as: :new_category_post
 
-  get "/categories/:category_id/posts/:id/edit" => 'posts#new', as: :edit_category_post
+  get "/categories/:category_id/posts/:id/edit" => 'posts#edit', as: :edit_category_post
 
   get "/categories/:category_id/posts/:id" => 'posts#show', as: :category_post
 

@@ -1,0 +1,23 @@
+<div class="form-horizontal">
+  <%= form_tag @post, edit_category_post_path(@category, @post), :method => :put do |f|%>
+    <fieldset>
+      <div class="form-group">
+        <label for="inputName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          <%= f.text_field      :title%>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputBody" class="col-lg-2 control-label">Body</label>
+        <div class="col-lg-10">
+          <%= f.text_area      :body%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.submit "Save Post", :class=>"btn btn-primary"%>
+        </div>
+      </div>
+    </fieldset>
+  <%end%>
+</div>
