@@ -1,4 +1,4 @@
-
+<div class="container">
 <h2><%=@post.title%></h2>
 <% if @post.user == current_user %>
 <%= link_to "Edit Post", edit_category_post_path(@category, @post), :class=>'btn btn-warning' %>
@@ -6,3 +6,4 @@
 <% end %>
 
 <p><%=@post.body%></p>
+</div>

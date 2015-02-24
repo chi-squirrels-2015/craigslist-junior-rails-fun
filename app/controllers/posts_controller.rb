@@ -6,12 +6,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    # post.category_id = params[:category_id]
-    # post.user = current_user
-    post.save
-    redirect_to "/categories/#{params[:category_id]}"
+    @post = Post.new(post_params)
 
+    respond_to do |format|
+      if @post.save
+        format.html {redirect_to "/categories/#{params[:category_id]}"}
+        format.js {render :xml => @post.to_xml}
+      end
+    end
   end
 
   def show

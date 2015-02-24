@@ -1,5 +1,5 @@
 <div class="form-horizontal">
-  <%= form_for @post, url: category_posts_path(@category) do |f|%>
+  <%= form_for @post, url: category_posts_path(@category), remote: true do |f|%>
     <fieldset>
       <div class="form-group">
         <label for="inputName" class="col-lg-2 control-label">Name</label>
